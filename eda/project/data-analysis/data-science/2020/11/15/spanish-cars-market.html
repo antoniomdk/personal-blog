@@ -91,7 +91,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      22 min read
+      20 min read
     
 </span></p>
 
@@ -188,24 +188,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">project</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
-
-<span class="n">tqdm_notebook</span><span class="o">.</span><span class="n">pandas</span><span class="p">()</span>
-
-<span class="n">configure_plotting</span><span class="p">()</span>
-
-<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">()</span>
-<span class="n">train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -364,17 +346,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cars_data</span> <span class="o">=</span> <span class="n">load_cars_data</span><span class="p">()</span>
-<span class="n">cars_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -527,18 +498,6 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cars_data_dict</span> <span class="o">=</span> <span class="n">generate_cars_dict</span><span class="p">(</span><span class="n">cars_data</span><span class="p">)</span>
-<span class="n">train_tidy</span> <span class="o">=</span> <span class="n">tidy_data</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">cars_data_dict</span><span class="p">)</span>
-<span class="n">test_tidy</span> <span class="o">=</span> <span class="n">tidy_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">cars_data_dict</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -615,18 +574,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Train-Test Count'</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">([</span><span class="s1">'Train'</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'Test'</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -672,18 +619,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">continuous_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'car_km'</span><span class="p">,</span> <span class="s1">'car_door_num'</span><span class="p">,</span> <span class="s1">'car_power'</span><span class="p">,</span>
-                      <span class="s1">'car_price'</span><span class="p">,</span> <span class="s1">'years_since_manufacturing'</span><span class="p">]</span>
-<span class="n">get_summary</span><span class="p">(</span><span class="n">train_tidy</span><span class="p">[</span><span class="n">continuous_columns</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -849,20 +784,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_train</span> <span class="o">=</span> <span class="n">remove_useless_numerical_variables</span><span class="p">(</span><span class="n">train_tidy</span><span class="p">)</span>
-<span class="n">clean_train</span> <span class="o">=</span> <span class="n">remove_outliers</span><span class="p">(</span><span class="n">clean_train</span><span class="p">)</span>
-<span class="n">clean_test</span> <span class="o">=</span> <span class="n">remove_useless_numerical_variables</span><span class="p">(</span><span class="n">test_tidy</span><span class="p">)</span>
-<span class="n">clean_test</span> <span class="o">=</span> <span class="n">remove_outliers</span><span class="p">(</span><span class="n">clean_test</span><span class="p">)</span>
-<span class="n">clean_continuous_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'car_km'</span><span class="p">,</span> <span class="s1">'car_power'</span><span class="p">,</span> <span class="s1">'years_since_manufacturing'</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -870,22 +791,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">clean_continuous_columns</span><span class="p">):</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">clean_train</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -909,22 +814,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">clean_continuous_columns</span><span class="p">):</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'car_price'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">clean_train</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -956,18 +845,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_correlation_matrix</span><span class="p">(</span><span class="n">clean_train</span><span class="p">[</span><span class="n">clean_continuous_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'car_price'</span><span class="p">]],</span>
-                        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">annot_size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1016,19 +893,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">categorical_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'model'</span><span class="p">,</span> <span class="s1">'brand'</span><span class="p">,</span> <span class="s1">'category'</span><span class="p">,</span>
-                       <span class="s1">'region'</span><span class="p">,</span> <span class="s1">'car_engine_type'</span><span class="p">]</span>
-
-<span class="n">get_missing_values</span><span class="p">(</span><span class="n">clean_train</span><span class="p">[</span><span class="n">categorical_columns</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1103,28 +967,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'region'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">clean_train</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="n">median_price_by_region</span> <span class="o">=</span> <span class="n">clean_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'region'</span><span class="p">)[</span><span class="s1">'car_price'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plot_lollipop</span><span class="p">(</span><span class="n">median_price_by_region</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'car_price'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'region'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Median Car Price'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1166,28 +1008,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'brand'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">clean_train</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="n">median_price_by_region</span> <span class="o">=</span> <span class="n">clean_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'brand'</span><span class="p">)[</span><span class="s1">'car_price'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
-<span class="n">plot_lollipop</span><span class="p">(</span><span class="n">median_price_by_region</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'car_price'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'brand'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Median Car Price'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1229,28 +1049,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'category'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">clean_train</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="n">median_price_by_region</span> <span class="o">=</span> <span class="n">clean_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)[</span><span class="s1">'car_price'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plot_lollipop</span><span class="p">(</span><span class="n">median_price_by_region</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'car_price'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'category'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Median Car Price'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1292,19 +1090,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxenplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'car_price'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'car_engine_type'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">clean_train</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1347,16 +1132,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_wordcloud</span><span class="p">(</span><span class="n">clean_train</span><span class="p">[</span><span class="s1">'model'</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1388,16 +1163,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_wordcloud</span><span class="p">(</span><span class="n">clean_train</span><span class="p">[</span><span class="s1">'car_desc'</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1429,20 +1194,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_train</span> <span class="o">=</span> <span class="n">clean_train</span><span class="p">[</span><span class="o">~</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">clean_train</span><span class="p">[</span><span class="s1">'image_url'</span><span class="p">])]</span>
-<span class="n">train_images_urls</span> <span class="o">=</span> <span class="n">clean_train</span><span class="p">[</span><span class="s1">'image_url'</span><span class="p">]</span>
-<span class="n">images_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'./images/'</span><span class="p">)</span>
-<span class="n">train_images_folder</span> <span class="o">=</span> <span class="n">images_folder</span> <span class="o">/</span> <span class="s1">'train'</span>
-<span class="n">test_images_folder</span> <span class="o">=</span> <span class="n">images_folder</span> <span class="o">/</span> <span class="s1">'test'</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -1450,21 +1201,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">download_images</span><span class="p">(</span><span class="n">train_images_urls</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">train_images_folder</span><span class="p">)</span>
-
-<span class="n">images_samples</span><span class="p">,</span> <span class="n">samples_title</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">load_images</span><span class="p">(</span>
-    <span class="n">train_images_folder</span><span class="p">,</span> <span class="n">return_filename</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-
-<span class="n">render_grid</span><span class="p">(</span><span class="n">images_samples</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s1">''</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1513,20 +1249,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_missing</span> <span class="o">=</span> <span class="n">get_missing_values</span><span class="p">(</span><span class="n">clean_train</span><span class="p">[</span><span class="n">clean_train</span><span class="o">.</span><span class="n">columns</span><span class="p">])</span>
-<span class="n">test_missing</span>  <span class="o">=</span> <span class="n">get_missing_values</span><span class="p">(</span><span class="n">clean_test</span><span class="p">[</span><span class="n">clean_test</span><span class="o">.</span><span class="n">columns</span><span class="p">])</span>
-<span class="n">missing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_missing</span><span class="p">,</span> <span class="n">test_missing</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">missing</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Missing Train'</span><span class="p">,</span> <span class="s1">'Missing Test'</span><span class="p">]</span>
-<span class="n">missing</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1648,17 +1370,6 @@ Name: 148165, dtype: object</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_train</span><span class="p">,</span> <span class="n">final_test</span> <span class="o">=</span> <span class="n">preprocess_data</span><span class="p">(</span><span class="n">clean_train</span><span class="p">,</span> <span class="n">clean_test</span><span class="p">)</span>
-<span class="n">final_train</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1821,22 +1532,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numerical_input_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'advertizer_type'</span><span class="p">,</span> <span class="s1">'years_since_manufacturing'</span><span class="p">,</span>
-                          <span class="s1">'car_km'</span><span class="p">,</span> <span class="s1">'car_power'</span><span class="p">,</span> <span class="s1">'car_engine_type'</span><span class="p">]</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">create_keras_model</span><span class="p">(</span><span class="n">final_train</span><span class="p">,</span> <span class="n">final_test</span><span class="p">,</span> <span class="n">numerical_input_columns</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">loss</span><span class="o">=</span><span class="s1">'mse'</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'mae'</span><span class="p">])</span>
-
-<span class="n">plot_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">expand_nested</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1860,23 +1555,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="p">[</span><span class="n">final_train</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">cols</span> <span class="ow">in</span>
-           <span class="p">[</span><span class="s1">'category'</span><span class="p">,</span> <span class="s1">'brand'</span><span class="p">,</span> <span class="s1">'model'</span><span class="p">,</span> <span class="s1">'region'</span><span class="p">,</span> <span class="n">numerical_input_columns</span><span class="p">]]</span>
-
-<span class="n">X_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">final_test</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">cols</span> <span class="ow">in</span>
-          <span class="p">[</span><span class="s1">'category'</span><span class="p">,</span> <span class="s1">'brand'</span><span class="p">,</span> <span class="s1">'model'</span><span class="p">,</span> <span class="s1">'region'</span><span class="p">,</span> <span class="n">numerical_input_columns</span><span class="p">]]</span>
-
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">final_train</span><span class="p">[</span><span class="s1">'car_price'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">y_test</span> <span class="o">=</span> <span class="n">final_test</span><span class="p">[</span><span class="s1">'car_price'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -1884,24 +1562,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">checkpoint</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="p">(</span><span class="s2">"best_model.hdf5"</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="s1">'mae'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                             <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span>
-          <span class="n">y_train</span><span class="p">,</span>
-          <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-          <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-          <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-          <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">PlotLearning</span><span class="p">(),</span> <span class="n">checkpoint</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1962,17 +1622,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_sample</span> <span class="o">=</span> <span class="n">final_test</span><span class="p">[</span><span class="s1">'image_url'</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">download_images</span><span class="p">(</span><span class="n">test_sample</span><span class="p">,</span> <span class="n">test_images_folder</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -1994,16 +1643,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">image_features</span><span class="p">,</span> <span class="n">image_ids</span> <span class="o">=</span> <span class="n">get_images_features</span><span class="p">(</span><span class="n">test_images_folder</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -2025,18 +1664,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_extractor</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
-<span class="n">features</span> <span class="o">=</span> <span class="n">feature_extractor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="n">plot_model</span><span class="p">(</span><span class="n">feature_extractor</span><span class="p">,</span> <span class="n">expand_nested</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -2068,24 +1695,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">hdbscan</span> <span class="kn">import</span> <span class="n">HDBSCAN</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
-
-<span class="n">cluster_data</span> <span class="o">=</span> <span class="n">final_train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'image_url'</span><span class="p">,</span> <span class="s1">'car_price'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sample_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="n">clusterer</span> <span class="o">=</span> <span class="n">HDBSCAN</span><span class="p">(</span><span class="n">min_cluster_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">cluster_labels</span> <span class="o">=</span> <span class="n">clusterer</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="n">sample_indices</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -2093,18 +1702,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cluster_labels</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">group_df</span> <span class="o">=</span> <span class="n">final_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sample_indices</span><span class="p">[</span><span class="n">samples</span><span class="p">[:</span><span class="mi">5</span><span class="p">]]]</span>
-<span class="n">clean_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">group_df</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -2248,17 +1845,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">images_clusterer</span> <span class="o">=</span> <span class="n">HDBSCAN</span><span class="p">(</span><span class="n">min_cluster_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">images_cluster_labels</span> <span class="o">=</span> <span class="n">images_clusterer</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">image_features</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -2266,17 +1852,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">images_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">images_cluster_labels</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">images_samples</span> <span class="o">=</span> <span class="n">final_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">image_ids</span><span class="p">[</span><span class="n">images_samples</span><span class="p">[:</span><span class="mi">6</span><span class="p">]]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     
@@ -2284,17 +1859,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">group_images</span> <span class="o">=</span> <span class="p">[</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">images_samples</span><span class="p">[</span><span class="s1">'image_url'</span><span class="p">]]</span>
-<span class="n">render_grid</span><span class="p">(</span><span class="n">group_images</span><span class="p">,</span> <span class="p">[</span><span class="s1">''</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_images</span><span class="p">),</span> <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -2318,19 +1882,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">images_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">images_cluster_labels</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">images_samples</span> <span class="o">=</span> <span class="n">final_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">image_ids</span><span class="p">[</span><span class="n">images_samples</span><span class="p">[:</span><span class="mi">6</span><span class="p">]]]</span>
-<span class="n">group_images</span> <span class="o">=</span> <span class="p">[</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">images_samples</span><span class="p">[</span><span class="s1">'image_url'</span><span class="p">]]</span>
-<span class="n">render_grid</span><span class="p">(</span><span class="n">group_images</span><span class="p">,</span> <span class="p">[</span><span class="s1">''</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_images</span><span class="p">),</span> <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -2371,32 +1922,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span><span class="p">,</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">r2_score</span>
-
-<span class="n">metric_clustering_1</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="n">sample_indices</span><span class="p">],</span> <span class="n">cluster_labels</span><span class="p">)</span>
-<span class="n">metric_clustering_2</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">image_features</span><span class="p">,</span> <span class="n">images_cluster_labels</span><span class="p">)</span>
-<span class="n">predictions_test</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="n">mae_test</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">predictions_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="n">r2_test</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">predictions_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-
-<span class="n">results</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s1">'Embeddings + Regressor'</span><span class="p">,</span> <span class="s1">'MAE'</span><span class="p">,</span> <span class="n">mae_test</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">'Embeddings + Regressor'</span><span class="p">,</span> <span class="s1">'R2 Score'</span><span class="p">,</span> <span class="n">r2_test</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">'HDBSCAN'</span><span class="p">,</span> <span class="s1">'Silhouette score'</span><span class="p">,</span> <span class="n">metric_clustering_1</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">'HDBSCAN Images'</span><span class="p">,</span> <span class="s1">'Silhouette score'</span><span class="p">,</span> <span class="n">metric_clustering_2</span><span class="p">],</span>
-<span class="p">]</span>
-
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Model'</span><span class="p">,</span> <span class="s1">'Metric'</span><span class="p">,</span> <span class="s1">'Value'</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
